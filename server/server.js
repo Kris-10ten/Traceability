@@ -37,7 +37,7 @@ app.post('/api/students', (req, res) => {
    try {
        if (index === -1 && name !== '') {
            students.push(name)
-           rollbar(`New student ${name} has been added`)
+           rollbar.info(`New student ${name} has been added`)
            res.status(200).send(students)
        } else if (name === ''){
            rollbar.error('Empty string was entered for new student')
